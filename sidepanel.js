@@ -114,26 +114,27 @@ document.getElementById("decodeBtn").addEventListener("click", () => {
                 vin,
              );
 
-             // Format Gemini response into a list
+             // Format Gemini Mark Down response to look better in the sidepanel
              
              const formattedResult = aiResult
-               // 1. Convert Headers (### Section) to Bold Red headers
+                // 1. Convert Headers (### Section) to Bold Red headers
                  .replace(/^### (.*$)/gim, '<br><strong style="color: #ff3e3e; text-transform: uppercase; font-size: 11px;">$1</strong>')
             
-            // 2. Convert Gemini's Double Bold (**Text**) to HTML Bold (<b>)
+                // 2. Convert Gemini's Double Bold (**Text**) to HTML Bold (<b>)
                 .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>") 
             
-            // 3. Convert Gemini's Single Bold/Italic (*Text*) to HTML Bold (<b>)
+                // 3. Convert Gemini's Single Bold/Italic (*Text*) to HTML Bold (<b>)
                 .replace(/\*(.*?)\*/g, "<b>$1</b>") 
             
-            // 4. Clean up bullet points to look better in the sidepanel
+                // 4. Clean up bullet points to look better in the sidepanel
                 .replace(/^\* /gim, "• ")
             
-            // 5. Convert final newlines to line breaks
+                // 5. Convert final newlines to line breaks
                 .replace(/\n/g, "<br>");
              
              console.log("Raw Gemini response:", aiResult);
              console.log("Formatted Gemini response:", formattedResult);
+
              rpoContainer.innerHTML = `
              <div style="margin-top: 15px; border-top: 1px solid #444; padding-top: 10px;">
                 <h4 style="color: #ff3e3e; margin: 0 0 10px 0; font-size: 12px;">Vehicle Information (Powered by Gemini AI)</h4>
