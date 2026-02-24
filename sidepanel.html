@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>VIN-sight RPO Decoder</title>
+    <style>
+  body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    padding: 20px; 
+    background-color: #1a1a1a; 
+    color: #e0e0e0; 
+    line-height: 1.6;
+  }
+  h2 { color: #ff3e3e; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; border-bottom: 2px solid #333; padding-bottom: 10px; }
+  
+  .input-group { margin-bottom: 25px; }
+  input { 
+    width: 100%; padding: 12px; background: #2d2d2d; border: 1px solid #444; 
+    border-radius: 6px; color: white; font-size: 16px; font-family: monospace; 
+    box-sizing: border-box; margin-bottom: 10px;
+  }
+  button { 
+    background: #ff3e3e; color: white; border: none; padding: 12px; 
+    width: 100%; border-radius: 6px; font-weight: bold; font-size: 14px; 
+    cursor: pointer; transition: background 0.2s;
+  }
+  button:hover { background: #e63535; }
+
+  .card { 
+    background: #252525; border-radius: 10px; padding: 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); border: 1px solid #333;
+  }
+  .car-title { font-size: 22px; font-weight: 800; color: #ffffff; margin: 0 0 15px 0; }
+  
+  .spec-row { 
+    display: flex; justify-content: space-between; 
+    padding: 8px 0; border-bottom: 1px solid #333; font-size: 14px;
+  }
+  .spec-label { color: #888; font-weight: bold; text-transform: uppercase; font-size: 11px; }
+  .spec-value { color: #fff; font-weight: 500; }
+</style>
+
+<body>
+  <h2>VIN-sight</h2>
+  
+  <div class="input-group">
+    <input type="text" id="vinInput" placeholder="PASTE 17-DIGIT VIN..." maxlength="17">
+    <button id="decodeBtn">SCAN VEHICLE</button>
+  </div>
+
+  <div id="vehicleInfo" class="card" style="display:none;">
+    <p class="car-title" id="carName">2024 Toyota Tacoma</p>
+    
+    <div class="spec-row"><span class="spec-label">Engine</span><span class="spec-value" id="specEngine">--</span></div>
+    <div class="spec-row"><span class="spec-label">Fuel Type</span><span class="spec-value" id="specFuel">--</span></div>
+    <div class="spec-row"><span class="spec-label">Drivetrain</span><span class="spec-value" id="specDrive">--</span></div>
+    <div class="spec-row"><span class="spec-label">Cylinders</span><span class="spec-value" id="specCyl">--</span></div>
+    <div class="spec-row"><span class="spec-label">Transmission</span><span class="spec-value" id="specTrans">--</span></div>
+    <div class="spec-row"><span class="spec-label">Body Style</span><span class="spec-value" id="specBody">--</span></div>
+  </div>
+
+  <div id="rpoCodes" class="card" style=" margin-top: 20px;">
+    <p class="car-title">RPO Codes</p>
+    <div id="rpoList"></div>
+  </div>
+
+  <script async src="sidepanel.js"></script>
+</body>
+</html>
+
+<!-- Version 1.0 (beta) -->
