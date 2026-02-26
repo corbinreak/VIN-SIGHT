@@ -93,17 +93,17 @@ document.getElementById("decodeBtn").addEventListener("click", () => {
             // Map raw GVWR classes to more user-friendly weight categories
 
             const gvwrMapping = {
-                "Class 1: 6,000 lb or less (2,722 kg or less)" :"Light Duty (0-6k LBS)",
-                "Class 1C: 4,001 - 5,000 lb (Small SUV/Sedan)" :"Light Duty (4k-5k LBS)",
-                "Class 1D: 5,001 - 6,000 lb (Half-ton / Light Truck)" :"Light Duty (5k-6k LBS)",
+                "Class 1: 6,000 lb or less (2,722 kg or less)" :"Class 1(0-6k LBS)",
+                "Class 1C: 4,001 - 5,000 lb (1,814 - 2,268 kg)" :"Class 1C (4k-5k LBS)",
+                "Class 1D: 5,001 - 6,000 lb (2,268 - 2,722 kg)" :"Class 1D (5k-6k LBS)",
 
 
-                "Class 2E: 6,001 - 7,000 lb (Full-size SUV / Truck)" :"Light Duty (6k-7k LBS)",
-                "Class 2F: 7,001 - 8,000 lb (Heavy Duty SUV/Truck)" :"Light/Medium Duty (7k-8k LBS)",
-                "Class 2G: 8,001 - 9,000 lb (Heavy Duty SUV/Truck)" :"Light/Medium Duty (8k-9k LBS)",
-                "Class 2H: 9,001 - 10,000 lb (Heavy Duty SUV/Truck)" :"Medium Duty (9k-10k LBS)",
+                "Class 2E: 6,001 - 7,000 lb (2,722 - 3,175 kg)" :"Class 2E (6k-7k LBS)",
+                "Class 2F: 7,001 - 8,000 lb (3,176 - 3,629 kg)" :"Class 2F (7k-8k LBS)",
+                "Class 2G: 8,001 - 9,000 lb (3,630 - 4,082 kg)" :"Class 2G (8k-9k LBS)",
+                "Class 2H: 9,001 - 10,000 lb (4,083 - 4,536 kg)" :"Class 2H (9k-10k LBS)",
 
-                "Class 3: 10,001 - 14,000 lb (Heavy Duty Truck)" :"Heavy Duty (10k-14k LBS)"
+                "Class 3: 10,001 - 14,000 lb (4,537 - 6,350 kg)" :"Class 3 (10k-14k LBS)"
             }
             
             const rawGVWR = vehicle.GVWR || 'N/A';
@@ -111,7 +111,7 @@ document.getElementById("decodeBtn").addEventListener("click", () => {
 
 
             // Log the full vehicle data for debugging purposes
-            
+
             console.log("Vehicle data from NHTSA API:", vehicle);
             document.getElementById('vehicleInfo').style.display = 'block';
 
