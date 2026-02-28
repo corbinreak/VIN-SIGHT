@@ -113,13 +113,12 @@ document.getElementById("decodeBtn").addEventListener("click", () => {
             // Log the full vehicle data for debugging purposes
 
             console.log("Vehicle data from NHTSA API:", vehicle);
-            document.getElementById('vehicleInfo').style.display = 'block';
-
-            document.getElementById('carName').innerText = `${vehicle.ModelYear} ${vehicle.Make} ${vehicle.Model}`
-
+            
             // Display more vehicle information as needed
             // Some examples may be null or empty, added a fallback to "N/A"
-
+            
+            document.getElementById('vehicleInfo').style.display = 'block';
+            document.getElementById('carName').innerText = `${vehicle.ModelYear} ${vehicle.Make} ${vehicle.Model}`
             document.getElementById('specEngine').innerText = `${engineSize}L ${vehicle.EngineConfiguration || 'N/A'}`;
             document.getElementById('specFuel').innerText = `${vehicle.FuelTypePrimary || 'N/A'}`;
             document.getElementById('specDrive').innerText = `${vehicle.DriveType || 'N/A'}`;
